@@ -138,7 +138,7 @@ button {
   color: var(--clr-white);
 }
 
-button:is(:hover, :focus) {
+button:is(:hover) {
   background: var(--gradient-tomato);
   box-shadow: 0.2rem 1rem 1.5rem hsl(var(--clr-neutral-hsl-700), 0.4);
 }
@@ -151,6 +151,9 @@ main {
   min-height: 100vh;
 }
 
+.error-text {
+  color: hsl(4, 95%, 67%);
+}
 
 /* ------------------------ */
 /*     Specific styles      */
@@ -207,9 +210,21 @@ main {
   gap: 0.3rem;
 }
 
+.email-address-label {
+  display: flex;
+  justify-content: space-between;
+}
+
 .email-address p {
   font-size: 0.875rem;
   font-weight: var(--fw-bold);
+}
+
+.email-address input.validation-error {
+  --validation-error: 13, 95%, 64%;
+  border-color: hsla(var(--validation-error), 0.9);
+  background-color: hsla(var(--validation-error), 0.25);
+  color: hsl(4, 95%, 67%);
 }
 
 .subscribe-success {
@@ -230,7 +245,7 @@ main {
   line-height: 1;
 }
 
-.subscribe-success__content #emailId {
+.subscribe-success__content #subscribedEmailId {
   font-weight: var(--fw-bold);
 }
 
@@ -239,8 +254,8 @@ main {
 }
 
 @media (min-width: 600px) {
-  body {
-    /* background-color: var(--clr-grey-500); do it from JS */
+  .grey-bg {
+    background-color: var(--clr-grey-500);
   }
 
   .subscribe-success {

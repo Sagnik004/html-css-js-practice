@@ -14,11 +14,13 @@
     <title>Newsletter sign-up form with success message</title>
 
     <link rel="stylesheet" href="style.css" />
+
+    <script src="script.js" defer></script>
   </head>
   <body>
     <main>
       <!-- Sign-up form start -->
-      <article class="signup">
+      <article class="signup" id="signup">
         <div class="signup__illustration">
           <picture>
             <source
@@ -95,21 +97,26 @@
             </li>
           </ul>
           <div class="email-address">
-            <p>Email address</p>
+            <div class="email-address-label">
+              <p>Email address</p>
+              <p class="hide">Valid email required</p>
+            </div>
             <input
               type="email"
               name="email"
-              id="email"
+              id="emailInput"
               placeholder="email@company.com"
             />
           </div>
-          <button class="button">Subscribe to monthly newsletter</button>
+          <button class="button" id="subscribeBtn">
+            Subscribe to monthly newsletter
+          </button>
         </div>
       </article>
       <!-- Sign-up form end -->
 
       <!-- Subscribe success start -->
-      <article class="subscribe-success hide">
+      <article class="subscribe-success hide" id="subscribeSuccess">
         <div class="subscribe-success__content">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -129,12 +136,11 @@
           <h1>Thanks for subscribing!</h1>
           <p>
             A confirmation email has been sent to
-            <span id="emailId">ash@loremcompany.com</span
-            >. Please open it and click the button inside to confirm your
-            subscription.
+            <span id="subscribedEmailId">ash@loremcompany.com</span>. Please open it and
+            click the button inside to confirm your subscription.
           </p>
         </div>
-        <button class="btn">Dismiss message</button>
+        <button class="btn" id="dismissMsgBtn">Dismiss message</button>
       </article>
       <!-- Subscribe success end -->
     </main>
