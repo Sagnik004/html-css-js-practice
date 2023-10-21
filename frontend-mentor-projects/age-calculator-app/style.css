@@ -1,0 +1,136 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/Poppins-Regular.ttf') format("truetype"),
+    url('/assets/fonts/Poppins-Bold.ttf') format("truetype"),
+    url('/assets/fonts/Poppins-BoldItalic.ttf') format("truetype"),
+    url('/assets/fonts/Poppins-ExtraBold.ttf') format("truetype"),
+    url('/assets/fonts/Poppins-ExtraBoldItalic.ttf') format("truetype"),
+    url('/assets/fonts/Poppins-Italic.ttf') format("truetype"),
+  ;
+  font-display: swap;
+}
+
+:root {
+  --ff-primary: 'Roboto', sans-serif;
+
+  --color-white: 0, 0%, 100%;
+  --color-offwhite: 0, 0%, 94%;
+  --color-light-grey: 0, 0%, 86%;
+  --color-smoke-grey: 0, 1%, 44%;
+  --color-off-black: 0, 0%, 8%;
+
+  --color-purple: 259, 100%, 65%;
+  --color-light-red: 0, 100%, 67%;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 16px;
+  font-weight: 400;
+  background-color: hsl(var(--color-light-grey));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+}
+
+main {
+  background-color: hsl(var(--color-white));
+  padding: 1rem;
+  border-radius: 15px;
+  border-bottom-right-radius: 15%;
+  color: hsl(var(--color-smoke-grey));
+}
+
+.date-input-section {
+  display: flex;
+  padding: 2rem 0.5rem;
+}
+
+.date-input-section label {
+  font-size: 0.78rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding-left: 3px;
+}
+
+.date-input-section input {
+  padding: 8px;
+  border: 0.1px solid hsl(var(--color-smoke-grey));
+  outline: none;
+  width: 50%;
+  font-weight: bold;
+  font-size: 1.125rem;
+  border-radius: 5px;
+  color: hsl(var(--color-off-black));
+}
+
+.date-input-section input:focus {
+  border-width: 0.75px;
+  border-color: hsl(var(--color-purple));
+}
+
+.day,
+.month,
+.year {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.separator {
+  position: relative;
+}
+
+.separator hr {
+  color: hsla(var(--color-light-grey), 0.3);
+}
+
+.separator img {
+  background-color: hsl(var(--color-purple));
+  border-radius: 50%;
+  padding: 0.6rem;
+  width: 5%;
+  position: absolute;
+  top: -19px;
+  left: 45%;
+}
+
+.age-output {
+  padding: 0;
+  padding-top: 2rem;
+}
+
+.age-output p {
+  font-size: 3.5rem;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 0;
+  margin-bottom: 0.1rem;
+}
+
+.age-output p span:nth-child(2) {
+  color: hsl(var(--color-off-black));
+}
+
+.count {
+  color: hsl(var(--color-purple));
+}
+
+@media (min-width: 600px) {
+  main {
+    width: 35%;
+    padding: 3rem;
+  }
+
+  .date-input-section input {
+    padding: 10px 8px;
+  }
+
+  .separator img {
+    left: auto;
+    top: -22px;
+    right: 0px;
+  }
+}
