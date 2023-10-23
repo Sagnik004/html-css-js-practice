@@ -13,45 +13,112 @@
     />
     <link rel="stylesheet" href="style.css" />
 
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          colors: {
+            white: 'hsl(0, 0%, 100%)',
+            offwhite: 'hsl(0, 0%, 94%)',
+            lightgrey: 'hsl(0, 0%, 86%)',
+            'lightgrey-200': 'hsla(0, 0%, 86%, 0.7)',
+            smokegrey: 'hsl(0, 1%, 44%)',
+            smokegreylight: 'hsl(0, 1%, 70%)',
+            offblack: 'hsl(0, 0%, 8%)',
+            purple: 'hsl(259, 100%, 65%)',
+            lightred: 'hsl(0, 100%, 67%)',
+          },
+          fontFamily: {
+            display: ['Poppins', 'sans-serif'],
+          },
+          screens: {
+            xs: '450px',
+            sm: '600px',
+          },
+          borderRadius: {
+            DEFAULT: '4px',
+            md: '0.375rem',
+            lg: '0.5rem',
+            full: '9999px',
+            large: '48px',
+            circle: '50%',
+          },
+          borderWidth: {
+            DEFAULT: '0.1px',
+            0: '0',
+            2: '2px',
+            3: '3px',
+            4: '4px',
+            6: '6px',
+            8: '8px',
+          },
+        },
+      };
+    </script>
+
     <title>Frontend Mentor Challenge | Age calculator app</title>
   </head>
-  <body>
-    <main>
-      <div class="date-input-section">
-        <div class="day">
-          <label>DAY</label>
-          <input type="text" />
+  <body
+    class="bg-lightgrey font-display text-base font-normal sm:flex sm:justify-center sm:items-center sm:min-h-screen"
+  >
+    <main
+      class="bg-white mt-12 mx-4 py-8 px-6 rounded-lg rounded-br-large text-smokegrey sm:p-6 sm:m-auto sm:w-[35rem]"
+    >
+      <div class="flex gap-6 pb-8">
+        <div class="flex flex-col">
+          <label class="text-[0.65rem] font-bold tracking-widest">DAY</label>
+          <input
+            type="text"
+            placeholder="DD"
+            id="input-birth-day"
+            class="p-2 text-offblack font-bold border border-solid border-smokegreylight rounded w-20 sm:w-24 outline-none focus:border-[1.1px] focus:border-purple focus-visible:border-[0.75px] focus-visible:border-purple"
+          />
         </div>
-        <div class="month">
-          <label>MONTH</label>
-          <input type="text" />
+        <div class="flex flex-col">
+          <label class="text-[0.65rem] font-bold tracking-widest">MONTH</label>
+          <input
+            type="text"
+            placeholder="MM"
+            id="input-birth-month"
+            class="p-2 text-offblack font-bold border border-solid border-smokegreylight rounded w-20 sm:w-24 outline-none focus:border-[0.75px] focus:border-purple focus-visible:border-[0.75px] focus-visible:border-purple"
+          />
         </div>
-        <div class="year">
-          <label>YEAR</label>
-          <input type="text" />
+        <div class="flex flex-col">
+          <label class="text-[0.65rem] font-bold tracking-widest">YEAR</label>
+          <input
+            type="text"
+            placeholder="YYYY"
+            id="input-birth-year"
+            class="p-2 text-offblack font-bold border border-solid border-smokegreylight rounded w-20 sm:w-24 outline-none focus:border-[0.75px] focus:border-purple focus-visible:border-[0.75px] focus-visible:border-purple"
+          />
         </div>
       </div>
 
-      <div class="separator">
-        <hr />
-        <img src="/assets/images/icon-arrow.svg" alt="Arrow icon svg" />
+      <div class="relative">
+        <hr class="text-lightgrey-200" />
+        <img
+          src="./assets/images/icon-arrow.svg"
+          alt="Arrow icon svg"
+          id="find-age-btn"
+          class="bg-purple rounded-circle p-2 w-[15%] xs:w-[10%] sm:w-[10%] absolute top-[-19px] left-[43%] sm:left-auto sm:top-[-24px] sm:right-[-5px] cursor-pointer hover:bg-offblack"
+        />
       </div>
 
-      <div class="age-output">
-        <p class="age-output__years">
-          <span class="count">0</span>
-          <span>years</span>
+      <div class="pt-11">
+        <p class="text-[3.5rem] font-bold italic pb-[3rem] flex gap-3">
+          <span class="text-purple font-bold" id="output-age-years">--</span>
+          <span class="text-offblack font-bold">years</span>
         </p>
-        <p class="age-output__months">
-          <span class="count">0</span>
-          <span>months</span>
+        <p class="text-[3.5rem] font-bold italic pb-[3rem] flex gap-3">
+          <span class="text-purple font-bold" id="output-age-months">--</span>
+          <span class="text-offblack font-bold">months</span>
         </p>
-        <p class="age-output__days">
-          <span class="count">0</span>
-          <span>days</span>
+        <p class="text-[3.5rem] font-bold italic pb-[3rem] flex gap-3">
+          <span class="text-purple font-bold" id="output-age-days">--</span>
+          <span class="text-offblack font-bold">days</span>
         </p>
       </div>
-
     </main>
   </body>
 </html>
